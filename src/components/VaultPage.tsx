@@ -45,13 +45,13 @@ interface Skill {
 const skills: Skill[] = [
   // Free Skills
   { name: "Clean Coder Lite", category: "Engineering", desc: "Essential protocols for writing clean, maintainable code.", price: "Free", icon: Code2, isFree: true, path: "/skill/coder-lite" },
+  { name: "UX Researcher Pro", category: "Design & UX", desc: "Deep behavioral analysis and insight synthesis.", price: "Free", icon: Search, isFree: true, path: "/skill/ux-researcher-pro" },
   { name: "Component Spec Lite", category: "Design & UX", desc: "Basic documentation framework for UI components.", price: "Free", icon: LayoutTemplate, isFree: true },
   { name: "Data Scraper v1", category: "Data & Marketing", desc: "Simple web scraping and data extraction logic.", price: "Free", icon: Database, isFree: true },
   { name: "Audit Log Lite", category: "Audit & Monitoring", desc: "Basic system event logging and monitoring architecture.", price: "Free", icon: Activity, isFree: true },
 
   // Premium Skills
   { name: "Design System Architect", category: "Design & UX", desc: "Build scalable design systems from scratch.", price: "$24.99", icon: Layers },
-  { name: "UX Researcher Pro", category: "Design & UX", desc: "Deep behavioral analysis and insight synthesis.", price: "$24.99", icon: Search },
   { name: "Figma-to-Code Sentinel", category: "Design & UX", desc: "Deterministic conversion of design to production code.", price: "$24.99", icon: MonitorOff },
   { name: "Full-Stack Sprint Master", category: "Engineering", desc: "Accelerate full-stack feature development.", price: "$24.99", icon: Rocket },
   { name: "Backend Engine v3", category: "Engineering", desc: "Robust API and database architecture logic.", price: "$24.99", icon: ServerCog },

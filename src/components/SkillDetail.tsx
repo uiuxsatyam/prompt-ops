@@ -297,7 +297,7 @@ The checkout flow analysis indicates significant drop-off at the "Shipping Detai
             onClick={() => navigate('/vault')}
             className="text-xs sm:text-sm font-bold bg-emerald-500 text-black px-4 py-2 sm:px-6 sm:py-2.5 rounded-xl hover:bg-emerald-400 transition-all shadow-[0_0_20px_rgba(16,185,129,0.2)] whitespace-nowrap"
           >
-            Unlock <span className="hidden sm:inline">Pro</span>
+            Get <span className="hidden sm:inline">Architecture</span>
           </button>
         </div>
       </nav>
@@ -322,13 +322,13 @@ The checkout flow analysis indicates significant drop-off at the "Shipping Detai
                 The industry standard for autonomous user research and behavioral analysis. Inject this skill to turn any LLM into a senior-level UX strategist capable of auditing complex flows and synthesizing deep user insights.
               </p>
               <div className="flex items-center gap-6 text-sm font-medium">
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 border border-white/10 px-3 py-1.5 rounded-lg bg-white/5">
                   <Zap className="w-4 h-4 text-emerald-500" />
                   Instant Injection
                 </div>
-                <div className="flex items-center gap-2">
-                  <Lock className="w-4 h-4 text-emerald-500" />
-                  Lifetime Access
+                <div className="flex items-center gap-2 border border-white/10 px-3 py-1.5 rounded-lg bg-emerald-500/10 text-emerald-400">
+                  <Lock className="w-4 h-4" />
+                  Free Tier Access
                 </div>
               </div>
             </motion.div>
@@ -339,7 +339,7 @@ The checkout flow analysis indicates significant drop-off at the "Shipping Detai
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative"
             >
-              <div className="glass-card p-8 border-emerald-500/10 relative z-10">
+              <div className="glass-card p-8 border-emerald-500/10 relative z-10 shadow-2xl bg-zinc-900/80 backdrop-blur-3xl">
                 <div className="flex items-center gap-2 mb-6 border-b border-white/5 pb-6">
                   <div className="w-3 h-3 rounded-full bg-red-500/20" />
                   <div className="w-3 h-3 rounded-full bg-amber-500/20" />
@@ -489,15 +489,15 @@ The checkout flow analysis indicates significant drop-off at the "Shipping Detai
           {/* Final CTA */}
           <section className="text-center py-10">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-8">
-              Available in Premium Vault
+              Available in Free Tier
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white">Ready to automate your research?</h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
-                onClick={() => navigate('/vault')}
+                onClick={handleCopyPrompt}
                 className="px-10 py-5 bg-emerald-500 text-black rounded-2xl font-bold hover:bg-emerald-400 transition-all shadow-[0_0_40px_rgba(16,185,129,0.2)]"
               >
-                Unlock Pro Skills
+                {promptCopied ? 'Copied Architect!' : 'Copy Architecture'}
               </button>
               <button
                 onClick={() => navigate('/vault')}
