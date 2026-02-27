@@ -186,6 +186,55 @@ const Hero = ({ onUnlock }: { onUnlock: () => void }) => {
   );
 };
 
+const WhatAreSkills = () => (
+  <section id="what-are-skills" className="border-t border-white/5 bg-[#050505]">
+    <div className="section-container">
+      <div className="text-center mb-20 px-6">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-6">
+          <Layers className="w-3 h-3" />
+          The Anatomy of a Skill
+        </div>
+        <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 tracking-tight">What are <span className="text-emerald-500">Skills?</span></h2>
+        <p className="text-zinc-400 max-w-2xl mx-auto text-lg leading-relaxed mix-blend-plus-lighter">
+          It's not just a prompt. It's a deterministic logic protocol delivered as a Markdown (.md) file. Paste it into your AI workspace, and it instantly transforms into a specialized engineer, designer, or researcher.
+        </p>
+      </div>
+
+      <div className="grid md:grid-cols-3 gap-6 relative">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[400px] bg-emerald-500/5 blur-[100px] rounded-full -z-10 pointer-events-none" />
+        {[
+          {
+            icon: Code2,
+            title: "Strict Constraints",
+            desc: "Every skill locks the LLM into a rigid architecture, forcing it to adhere to your specific tech stack, design system, and compliance rules."
+          },
+          {
+            icon: ShieldCheck,
+            title: "Zero Hallucinations",
+            desc: "By providing explicit decision trees and expected output formats, .md skills eliminate the guesswork and drastically reduce error rates."
+          },
+          {
+            icon: Zap,
+            title: "Workflow Supercharger",
+            desc: "Turn a 2-hour debugging session into a 10-second generation. Equip your entire team with the exact same high-performing logic."
+          }
+        ].map((feature, i) => (
+          <div key={i} className="p-8 pb-10 rounded-[2rem] bg-zinc-900/30 border border-white/5 hover:border-emerald-500/30 transition-all group relative overflow-hidden flex flex-col items-start backdrop-blur-sm">
+            <div className="absolute top-0 right-0 p-8 opacity-0 group-hover:opacity-5 transition-opacity duration-500">
+              <feature.icon className="w-32 h-32 text-emerald-500" />
+            </div>
+            <div className="w-12 h-12 rounded-2xl bg-zinc-900 flex items-center justify-center border border-white/5 mb-8 group-hover:bg-emerald-500 group-hover:text-black transition-all">
+              <feature.icon className="w-6 h-6" />
+            </div>
+            <h3 className="text-2xl font-bold mb-4 text-white">{feature.title}</h3>
+            <p className="text-zinc-500 text-sm leading-relaxed">{feature.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
 const Problem = () => (
   <section id="problem" className="border-t border-white/5">
     <div className="section-container">
@@ -854,6 +903,7 @@ export default function LandingPage() {
       <Navbar onUnlock={() => setIsPurchaseModalOpen(true)} onAuth={() => navigate('/auth')} />
       <main>
         <Hero onUnlock={() => setIsPurchaseModalOpen(true)} />
+        <WhatAreSkills />
         <Problem />
         <BeforeAfter />
         <HowToUse />
