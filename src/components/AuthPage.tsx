@@ -10,10 +10,10 @@ export const AuthPage = () => {
     <div className="min-h-screen bg-[#050505] text-white flex flex-col items-center justify-center p-6 selection:bg-emerald-500/30 selection:text-emerald-500">
       <button
         onClick={() => navigate('/')}
-        className="absolute top-8 left-8 flex items-center gap-2 text-sm font-medium text-zinc-400 hover:text-white transition-colors group"
+        className="absolute top-6 left-6 sm:top-8 sm:left-8 flex items-center gap-1 sm:gap-2 text-xs sm:text-sm font-medium text-zinc-400 hover:text-white transition-colors group"
       >
         <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-        Back to Home
+        <span className="hidden sm:inline">Back</span>
       </button>
 
       <motion.div

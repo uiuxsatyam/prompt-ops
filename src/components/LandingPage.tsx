@@ -20,10 +20,10 @@ import {
 
 const Navbar = ({ onUnlock, onAuth }: { onUnlock: () => void, onAuth: () => void }) => (
   <nav className="fixed top-0 left-0 right-0 z-50 bg-[#050505]/80 backdrop-blur-md border-b border-white/5">
-    <div className="w-full px-6 md:px-12 lg:px-16 h-20 flex items-center justify-between">
-      <div className="flex items-center gap-2">
-        <Terminal className="w-6 h-6 text-emerald-500" />
-        <span className="font-display font-bold text-xl tracking-tighter uppercase text-white">Prompt Ops</span>
+    <div className="w-full px-4 sm:px-6 md:px-12 lg:px-16 h-16 sm:h-20 flex items-center justify-between">
+      <div className="flex items-center gap-1 sm:gap-2">
+        <Terminal className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-500" />
+        <span className="font-display font-bold text-base sm:text-xl tracking-tighter uppercase text-white">Prompt Ops</span>
       </div>
       <div className="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
         <a href="#problem" className="hover:text-white transition-colors">Features</a>
@@ -31,18 +31,18 @@ const Navbar = ({ onUnlock, onAuth }: { onUnlock: () => void, onAuth: () => void
         <a href="#comparison" className="hover:text-white transition-colors">Why Us</a>
         <a href="#platforms" className="hover:text-white transition-colors">Skills Vault</a>
       </div>
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-3 sm:gap-4">
         <button
           onClick={onAuth}
-          className="text-sm font-bold text-zinc-400 hover:text-white transition-colors"
+          className="text-xs sm:text-sm font-bold text-zinc-400 hover:text-white transition-colors"
         >
           Sign In
         </button>
         <button
           onClick={onUnlock}
-          className="text-sm font-bold bg-emerald-500 text-black px-6 py-2.5 rounded-xl hover:bg-emerald-400 transition-all shadow-[0_0_20px_rgba(16,185,129,0.2)]"
+          className="text-xs sm:text-sm font-bold bg-emerald-500 text-black px-4 py-2 sm:px-6 sm:py-2.5 rounded-xl hover:bg-emerald-400 transition-all shadow-[0_0_20px_rgba(16,185,129,0.2)] whitespace-nowrap"
         >
-          Unlock Pro Skills
+          Unlock <span className="hidden sm:inline">Pro Skills</span>
         </button>
       </div>
     </div>

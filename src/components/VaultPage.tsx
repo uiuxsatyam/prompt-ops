@@ -77,21 +77,23 @@ export const VaultPage = () => {
     <div className="min-h-screen bg-[#050505] text-white selection:bg-emerald-500/30 selection:text-emerald-500">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#050505]/80 backdrop-blur-md border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between relative">
           <button
             onClick={() => navigate('/')}
-            className="flex items-center gap-2 text-sm font-medium text-zinc-400 hover:text-white transition-colors group"
+            className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm font-medium text-zinc-400 hover:text-white transition-colors group"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-            Back to Home
+            <span className="hidden sm:inline">Back</span>
           </button>
-          <div className="flex items-center gap-2">
-            <Terminal className="w-6 h-6 text-emerald-500" />
-            <span className="font-display font-bold text-xl tracking-tighter uppercase text-white">Prompt Ops Vault</span>
+          <div className="flex items-center gap-1 sm:gap-2 absolute left-1/2 -translate-x-1/2 sm:static sm:translate-x-0">
+            <Terminal className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-500" />
+            <span className="font-display font-bold text-sm sm:text-xl tracking-tighter uppercase text-white whitespace-nowrap">
+              Vault
+            </span>
           </div>
           <button
             onClick={() => navigate('/auth')}
-            className="text-sm font-bold bg-white text-black px-6 py-2.5 rounded-xl hover:bg-zinc-200 transition-all"
+            className="text-xs sm:text-sm font-bold bg-white text-black px-4 py-2 sm:px-6 sm:py-2.5 rounded-xl hover:bg-zinc-200 transition-all whitespace-nowrap"
           >
             Sign In
           </button>

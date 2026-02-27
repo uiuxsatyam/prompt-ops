@@ -153,23 +153,23 @@ export default async function UserProfileView({ userId }: { userId: string }) {
         <div className="min-h-screen bg-[#050505] text-zinc-400 selection:bg-emerald-500/30 selection:text-emerald-500">
             {/* Navigation */}
             <nav className="fixed top-0 left-0 right-0 z-50 bg-[#050505]/80 backdrop-blur-md border-b border-white/5">
-                <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between relative">
                     <button
                         onClick={() => navigate('/')}
-                        className="flex items-center gap-2 text-sm font-medium hover:text-white transition-colors group"
+                        className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm font-medium hover:text-white transition-colors group"
                     >
                         <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-                        Back to Home
+                        <span className="hidden sm:inline">Back</span>
                     </button>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-1 sm:gap-2 absolute left-1/2 -translate-x-1/2 sm:static sm:translate-x-0">
                         <Terminal className="w-5 h-5 text-emerald-500" />
-                        <span className="font-display font-bold text-lg tracking-tighter uppercase text-white">Prompt Ops</span>
+                        <span className="font-display font-bold text-sm sm:text-lg tracking-tighter uppercase text-white whitespace-nowrap">Prompt Ops</span>
                     </div>
                     <button
                         onClick={() => navigate('/vault')}
-                        className="text-sm font-bold bg-emerald-500 text-black px-6 py-2.5 rounded-xl hover:bg-emerald-400 transition-all shadow-[0_0_20px_rgba(16,185,129,0.2)]"
+                        className="text-xs sm:text-sm font-bold bg-emerald-500 text-black px-4 py-2 sm:px-6 sm:py-2.5 rounded-xl hover:bg-emerald-400 transition-all shadow-[0_0_20px_rgba(16,185,129,0.2)] whitespace-nowrap"
                     >
-                        Get Architecture
+                        Get <span className="hidden sm:inline">Architecture</span>
                     </button>
                 </div>
             </nav>
