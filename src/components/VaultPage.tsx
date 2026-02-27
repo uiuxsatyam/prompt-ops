@@ -1,6 +1,35 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ShieldCheck, Terminal, Bot, ArrowRight, ArrowLeft, Zap, Star } from 'lucide-react';
+import {
+  ShieldCheck,
+  Terminal,
+  Bot,
+  ArrowRight,
+  ArrowLeft,
+  Zap,
+  Star,
+  Code2,
+  Pencil,
+  Database,
+  Activity,
+  Layers,
+  LayoutTemplate,
+  MonitorOff,
+  ServerCog,
+  Cpu,
+  BrainCircuit,
+  Rocket,
+  Search,
+  Briefcase,
+  Megaphone,
+  PieChart,
+  Bug,
+  FileCheck2,
+  Settings2,
+  Cloud,
+  Lock,
+  LineChart
+} from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 interface Skill {
@@ -8,36 +37,37 @@ interface Skill {
   category: string;
   desc: string;
   price: string;
+  icon: React.ElementType;
   isFree?: boolean;
   path?: string;
 }
 
 const skills: Skill[] = [
   // Free Skills
-  { name: "Clean Coder Lite", category: "Engineering", desc: "Essential protocols for writing clean, maintainable code.", price: "Free", isFree: true, path: "/skill/coder-lite" },
-  { name: "Component Spec Lite", category: "Design & UX", desc: "Basic documentation framework for UI components.", price: "Free", isFree: true },
-  { name: "Data Scraper v1", category: "Data & Marketing", desc: "Simple web scraping and data extraction logic.", price: "Free", isFree: true },
-  { name: "Audit Log Lite", category: "Audit & Monitoring", desc: "Basic system event logging and monitoring architecture.", price: "Free", isFree: true },
+  { name: "Clean Coder Lite", category: "Engineering", desc: "Essential protocols for writing clean, maintainable code.", price: "Free", icon: Code2, isFree: true, path: "/skill/coder-lite" },
+  { name: "Component Spec Lite", category: "Design & UX", desc: "Basic documentation framework for UI components.", price: "Free", icon: LayoutTemplate, isFree: true },
+  { name: "Data Scraper v1", category: "Data & Marketing", desc: "Simple web scraping and data extraction logic.", price: "Free", icon: Database, isFree: true },
+  { name: "Audit Log Lite", category: "Audit & Monitoring", desc: "Basic system event logging and monitoring architecture.", price: "Free", icon: Activity, isFree: true },
 
   // Premium Skills
-  { name: "Design System Architect", category: "Design & UX", desc: "Build scalable design systems from scratch.", price: "$24.99" },
-  { name: "UX Researcher Pro", category: "Design & UX", desc: "Deep behavioral analysis and insight synthesis.", price: "$24.99" },
-  { name: "Figma-to-Code Sentinel", category: "Design & UX", desc: "Deterministic conversion of design to production code.", price: "$24.99" },
-  { name: "Full-Stack Sprint Master", category: "Engineering", desc: "Accelerate full-stack feature development.", price: "$24.99" },
-  { name: "Backend Engine v3", category: "Engineering", desc: "Robust API and database architecture logic.", price: "$24.99" },
-  { name: "Frontend Component Factory", category: "Engineering", desc: "Atomic component generation at scale.", price: "$24.99" },
-  { name: "The Intelligence Hub", category: "Data & Marketing", desc: "Market sentiment and data analysis frameworks.", price: "$24.99" },
-  { name: "Marketing Pulse Monitor", category: "Data & Marketing", desc: "Autonomous campaign performance tracking.", price: "$24.99" },
-  { name: "SQL Synthesis Protocol", category: "Data & Marketing", desc: "Natural language to complex SQL query logic.", price: "$24.99" },
-  { name: "QA Sentinel Pro", category: "Testing & QA", desc: "Automated end-to-end testing protocols.", price: "$24.99" },
-  { name: "Edge Case Architect", category: "Testing & QA", desc: "Discover critical edge cases before deployment.", price: "$24.99" },
-  { name: "Test Suite Generator", category: "Testing & QA", desc: "Comprehensive unit and integration test suites.", price: "$24.99" },
-  { name: "DevOps Engine Pro", category: "Deployment & Ops", desc: "CI/CD and infrastructure orchestration.", price: "$24.99" },
-  { name: "Infra Architect", category: "Deployment & Ops", desc: "Cloud infrastructure-as-code synthesis.", price: "$24.99" },
-  { name: "Scaling Protocol", category: "Deployment & Ops", desc: "Logic for scaling distributed systems.", price: "$24.99" },
-  { name: "Security Sentinel", category: "Audit & Monitoring", desc: "Continuous security and vulnerability auditing.", price: "$24.99" },
-  { name: "Performance Architect", category: "Audit & Monitoring", desc: "System performance and latency optimization.", price: "$24.99" },
-  { name: "Compliance Engine", category: "Audit & Monitoring", desc: "Regulatory and compliance check protocols.", price: "$24.99" },
+  { name: "Design System Architect", category: "Design & UX", desc: "Build scalable design systems from scratch.", price: "$24.99", icon: Layers },
+  { name: "UX Researcher Pro", category: "Design & UX", desc: "Deep behavioral analysis and insight synthesis.", price: "$24.99", icon: Search },
+  { name: "Figma-to-Code Sentinel", category: "Design & UX", desc: "Deterministic conversion of design to production code.", price: "$24.99", icon: MonitorOff },
+  { name: "Full-Stack Sprint Master", category: "Engineering", desc: "Accelerate full-stack feature development.", price: "$24.99", icon: Rocket },
+  { name: "Backend Engine v3", category: "Engineering", desc: "Robust API and database architecture logic.", price: "$24.99", icon: ServerCog },
+  { name: "Frontend Component Factory", category: "Engineering", desc: "Atomic component generation at scale.", price: "$24.99", icon: Cpu },
+  { name: "The Intelligence Hub", category: "Data & Marketing", desc: "Market sentiment and data analysis frameworks.", price: "$24.99", icon: BrainCircuit },
+  { name: "Marketing Pulse Monitor", category: "Data & Marketing", desc: "Autonomous campaign performance tracking.", price: "$24.99", icon: Megaphone },
+  { name: "SQL Synthesis Protocol", category: "Data & Marketing", desc: "Natural language to complex SQL query logic.", price: "$24.99", icon: Briefcase },
+  { name: "QA Sentinel Pro", category: "Testing & QA", desc: "Automated end-to-end testing protocols.", price: "$24.99", icon: FileCheck2 },
+  { name: "Edge Case Architect", category: "Testing & QA", desc: "Discover critical edge cases before deployment.", price: "$24.99", icon: Bug },
+  { name: "Test Suite Generator", category: "Testing & QA", desc: "Comprehensive unit and integration test suites.", price: "$24.99", icon: Settings2 },
+  { name: "DevOps Engine Pro", category: "Deployment & Ops", desc: "CI/CD and infrastructure orchestration.", price: "$24.99", icon: Cloud },
+  { name: "Infra Architect", category: "Deployment & Ops", desc: "Cloud infrastructure-as-code synthesis.", price: "$24.99", icon: Terminal },
+  { name: "Scaling Protocol", category: "Deployment & Ops", desc: "Logic for scaling distributed systems.", price: "$24.99", icon: LineChart },
+  { name: "Security Sentinel", category: "Audit & Monitoring", desc: "Continuous security and vulnerability auditing.", price: "$24.99", icon: Lock },
+  { name: "Performance Architect", category: "Audit & Monitoring", desc: "System performance and latency optimization.", price: "$24.99", icon: Zap },
+  { name: "Compliance Engine", category: "Audit & Monitoring", desc: "Regulatory and compliance check protocols.", price: "$24.99", icon: ShieldCheck },
 ];
 
 export const VaultPage = () => {
@@ -111,7 +141,7 @@ export const VaultPage = () => {
 
                 <div className="flex items-start justify-between mb-6">
                   <div className="w-12 h-12 rounded-2xl bg-zinc-900 flex items-center justify-center border border-white/5 group-hover:bg-emerald-500 group-hover:text-black transition-all">
-                    <Bot className="w-6 h-6" />
+                    <skill.icon className="w-6 h-6" />
                   </div>
                   {!skill.isFree && (
                     <div className="text-[11px] font-bold uppercase tracking-widest text-emerald-500 bg-emerald-500/10 px-3 py-1 rounded-lg border border-emerald-500/20">

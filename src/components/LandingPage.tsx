@@ -9,12 +9,13 @@ import {
   ArrowRight,
   CheckCircle2,
   Code2,
-  Layers,
-  Coins,
-  ChevronDown,
-  Mail,
   Globe,
-  Bot
+  Bot,
+  Database,
+  FileCheck2,
+  ServerCog,
+  Layers,
+  ChevronDown
 } from 'lucide-react';
 
 const Navbar = ({ onUnlock, onAuth }: { onUnlock: () => void, onAuth: () => void }) => (
@@ -495,48 +496,54 @@ const Platforms = () => {
               desc: "Architectures for UI/UX Designers and Design System Leads.",
               useCases: ["Design System Spec Generation", "Accessibility Audit Protocols", "User Flow Mapping"],
               free: "Component Spec Lite",
-              premium: ["Design System Architect", "UX Researcher Pro", "Figma-to-Code Sentinel"]
+              premium: ["Design System Architect", "UX Researcher Pro", "Figma-to-Code Sentinel"],
+              icon: Layers
             },
             {
               name: "Engineering",
               desc: "Deep-logic prompts for Frontend, Backend, and Full-Stack Developers.",
               useCases: ["API Schema Synthesis", "Legacy Code Refactoring", "Database Migration Logic"],
               free: "Clean Coder Lite",
-              premium: ["Full-Stack Sprint Master", "Backend Engine v3", "Frontend Component Factory"]
+              premium: ["Full-Stack Sprint Master", "Backend Engine v3", "Frontend Component Factory"],
+              icon: Code2
             },
             {
               name: "Data & Marketing",
               desc: "Specialized frameworks for Data Analysts and Marketing Teams.",
               useCases: ["Market Sentiment Analysis", "SQL Query Synthesis", "Campaign Copy Architect"],
               free: "Data Scraper v1",
-              premium: ["The Intelligence Hub", "Marketing Pulse Monitor", "SQL Synthesis Protocol"]
+              premium: ["The Intelligence Hub", "Marketing Pulse Monitor", "SQL Synthesis Protocol"],
+              icon: Database
             },
             {
               name: "Testing & QA",
               desc: "Rigorous protocols for automated testing and quality assurance.",
               useCases: ["Edge Case Discovery", "Unit Test Generation", "End-to-End Flow Validation"],
               free: "Bug Hunter Lite",
-              premium: ["QA Sentinel Pro", "Edge Case Architect", "Test Suite Generator"]
+              premium: ["QA Sentinel Pro", "Edge Case Architect", "Test Suite Generator"],
+              icon: FileCheck2
             },
             {
               name: "Deployment & Ops",
               desc: "Infrastructure-as-code and deployment automation architectures.",
               useCases: ["CI/CD Pipeline Synthesis", "Docker/K8s Orchestration", "Cloud Infrastructure Audit"],
               free: "Deploy Script v1",
-              premium: ["DevOps Engine Pro", "Infra Architect", "Scaling Protocol"]
+              premium: ["DevOps Engine Pro", "Infra Architect", "Scaling Protocol"],
+              icon: ServerCog
             },
             {
               name: "Audit & Monitoring",
               desc: "Continuous monitoring and security auditing frameworks.",
               useCases: ["Security Vulnerability Audit", "Performance Monitoring Log", "Compliance Check Protocol"],
               free: "Audit Log Lite",
-              premium: ["Security Sentinel", "Performance Architect", "Compliance Engine"]
+              premium: ["Security Sentinel", "Performance Architect", "Compliance Engine"],
+              icon: ShieldCheck
             }
           ].map((platform, i) => (
             <div key={i} className="p-8 rounded-[2rem] bg-zinc-900/20 border border-white/5 hover:border-emerald-500/30 transition-all group">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-xl bg-zinc-900 flex items-center justify-center border border-white/5 group-hover:bg-emerald-500 group-hover:text-black transition-all">
-                  <Bot className="w-5 h-5" />
+                  <platform.icon className="w-5 h-5" />
                 </div>
                 <h3 className="text-xl font-bold">{platform.name}</h3>
               </div>
