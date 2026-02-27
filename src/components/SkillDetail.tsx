@@ -302,7 +302,7 @@ The checkout flow analysis indicates significant drop-off at the "Shipping Detai
         </div>
       </nav>
 
-      <main className="pt-16 pb-8">
+      <main className="pt-28 pb-8">
         <div className="max-w-7xl mx-auto px-6">
           {/* Header */}
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
