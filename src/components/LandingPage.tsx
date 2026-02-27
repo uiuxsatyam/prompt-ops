@@ -593,45 +593,62 @@ const Platforms = () => {
   );
 };
 
+const testimonialsList = [
+  {
+    quote: "The .md skills are a game changer. Our agents now follow strict architectural patterns without any manual oversight.",
+    author: "Sarah Chen",
+    role: "Lead Architect @ TechFlow",
+    avatar: "https://picsum.photos/seed/sarah/100/100"
+  },
+  {
+    quote: "We've reduced our prompt engineering time by 90%. The specialist vaults are worth every penny for the engineering team.",
+    author: "Marcus Thorne",
+    role: "CTO @ Nexus Labs",
+    avatar: "https://picsum.photos/seed/marcus/100/100"
+  },
+  {
+    quote: "Finally, a way to make AI actually useful for complex UX research. The structured output is exactly what we needed.",
+    author: "Elena Rodriguez",
+    role: "Design Director @ CreativePulse",
+    avatar: "https://picsum.photos/seed/elena/100/100"
+  },
+  {
+    quote: "PromptOps is a competitive advantage. The deep-logic instructions make our backend agents 10x more reliable.",
+    author: "James Wilson",
+    role: "VP Engineering @ DataScale",
+    avatar: "https://picsum.photos/seed/james/100/100"
+  }
+];
+
 const Testimonials = () => (
-  <section className="border-t border-white/5">
-    <div className="section-container">
-      <div className="text-center mb-20">
+  <section className="border-t border-white/5 overflow-hidden">
+    <div className="section-container !px-0">
+      <div className="text-center mb-20 px-6">
         <h2 className="text-4xl md:text-6xl font-bold mb-6">Trusted by the best.</h2>
         <p className="text-zinc-500 max-w-2xl mx-auto">See how PromptOps is transforming workflows for top-tier engineering and design teams.</p>
       </div>
-      <div className="grid md:grid-cols-3 gap-8">
-        {[
-          {
-            quote: "The .md skills are a game changer. Our agents now follow strict architectural patterns without any manual oversight.",
-            author: "Sarah Chen",
-            role: "Lead Architect @ TechFlow",
-            avatar: "https://picsum.photos/seed/sarah/100/100"
-          },
-          {
-            quote: "We've reduced our prompt engineering time by 90%. The specialist vaults are worth every penny for the engineering team.",
-            author: "Marcus Thorne",
-            role: "CTO @ Nexus Labs",
-            avatar: "https://picsum.photos/seed/marcus/100/100"
-          },
-          {
-            quote: "Finally, a way to make AI actually useful for complex UX research. The structured output is exactly what we needed.",
-            author: "Elena Rodriguez",
-            role: "Design Director @ CreativePulse",
-            avatar: "https://picsum.photos/seed/elena/100/100"
-          }
-        ].map((t, i) => (
-          <div key={i} className="p-8 rounded-[2rem] bg-zinc-900/20 border border-white/5 hover:border-emerald-500/20 transition-all">
-            <p className="text-zinc-300 italic mb-8 leading-relaxed">"{t.quote}"</p>
-            <div className="flex items-center gap-4">
-              <img src={t.avatar} alt={t.author} className="w-10 h-10 rounded-full border border-white/10" referrerPolicy="no-referrer" />
-              <div>
-                <div className="text-white font-bold text-sm">{t.author}</div>
-                <div className="text-zinc-500 text-xs">{t.role}</div>
+      <div
+        className="relative flex overflow-hidden w-full group"
+        style={{ maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)' }}
+      >
+        <motion.div
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ repeat: Infinity, ease: "linear", duration: 30 }}
+          className="flex gap-8 w-max px-4"
+        >
+          {[...testimonialsList, ...testimonialsList].map((t, i) => (
+            <div key={i} className="w-[400px] shrink-0 whitespace-normal p-8 rounded-[2rem] bg-zinc-900/20 border border-white/5 hover:border-emerald-500/20 transition-all">
+              <p className="text-zinc-300 italic mb-8 leading-relaxed">"{t.quote}"</p>
+              <div className="flex items-center gap-4">
+                <img src={t.avatar} alt={t.author} className="w-10 h-10 rounded-full border border-white/10" referrerPolicy="no-referrer" />
+                <div>
+                  <div className="text-white font-bold text-sm">{t.author}</div>
+                  <div className="text-zinc-500 text-xs">{t.role}</div>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </motion.div>
       </div>
     </div>
   </section>
