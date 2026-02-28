@@ -19,30 +19,30 @@ import {
 } from 'lucide-react';
 
 const Navbar = ({ onUnlock, onAuth }: { onUnlock: () => void, onAuth: () => void }) => (
-  <nav className="fixed top-0 left-0 right-0 z-50 bg-[#050505]/80 backdrop-blur-md border-b border-white/5">
-    <div className="w-full px-4 sm:px-6 md:px-12 lg:px-16 h-16 sm:h-20 flex items-center justify-between">
-      <div className="flex items-center gap-1 sm:gap-2">
-        <Terminal className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-500" />
-        <span className="font-display font-bold text-base sm:text-xl tracking-tighter uppercase text-white">Prompt Ops</span>
+  <nav className="fixed top-0 left-0 right-0 z-50 bg-[#020205]/80 backdrop-blur-md border-b border-white/5">
+    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+      <div className="flex items-center gap-2">
+        <Terminal className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+        <span className="font-display font-bold text-base sm:text-lg tracking-tighter text-white">Prompt Ops</span>
       </div>
-      <div className="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
+      <div className="hidden md:flex items-center gap-8 text-[13px] font-medium text-[#A0A0AB]">
         <a href="#problem" className="hover:text-white transition-colors">Features</a>
         <a href="#how-it-works" className="hover:text-white transition-colors">How it Works</a>
         <a href="#comparison" className="hover:text-white transition-colors">Why Us</a>
         <a href="#platforms" className="hover:text-white transition-colors">Skills Vault</a>
       </div>
-      <div className="flex items-center gap-3 sm:gap-4">
+      <div className="flex items-center gap-4 sm:gap-6">
         <button
           onClick={onAuth}
-          className="text-xs sm:text-sm font-bold text-zinc-400 hover:text-white transition-colors"
+          className="text-[13px] font-semibold text-[#A0A0AB] hover:text-white transition-colors"
         >
-          Sign In
+          Sign in
         </button>
         <button
           onClick={onUnlock}
-          className="text-xs sm:text-sm font-bold bg-emerald-500 text-black px-4 py-2 sm:px-6 sm:py-2.5 rounded-xl hover:bg-emerald-400 transition-all shadow-[0_0_20px_rgba(16,185,129,0.2)] whitespace-nowrap"
+          className="text-[13px] font-semibold bg-[#10B981] hover:bg-[#059669] text-black px-4 py-2 sm:px-5 sm:py-2.5 rounded-lg transition-all"
         >
-          Unlock <span className="hidden sm:inline">Pro Skills</span>
+          Unlock Pro
         </button>
       </div>
     </div>
@@ -116,72 +116,111 @@ const Hero = ({ onUnlock }: { onUnlock: () => void }) => {
   const navigate = useNavigate();
 
   return (
-    <section className="relative min-h-screen pt-28 flex flex-col justify-center overflow-hidden bg-[#050505]">
-      {/* Halo Blur Effect */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-emerald-500/5 blur-[120px] rounded-full -z-10" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-emerald-400/5 blur-[80px] rounded-full -z-10 animate-pulse" />
+    <section className="relative min-h-screen pt-24 pb-8 flex flex-col justify-center items-center overflow-hidden bg-[#020205]">
+      {/* Background Central Glow */}
+      <div className="absolute top-[40%] left-1/2 -translate-x-1/2 w-[60vw] h-[60vh] bg-[#10B981]/10 blur-[120px] rounded-full pointer-events-none z-0" />
 
-      <div className="section-container relative z-10">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="inline-flex items-center justify-center px-4 py-1.5 mb-8 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-widest backdrop-blur-md">
-              <span className="relative flex h-2 w-2 mr-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-              </span>
-              V2.0 Vault Now Live
-            </div>
-            <h1 className="text-5xl md:text-6xl lg:text-[4.5rem] font-bold leading-[1.05] text-white tracking-tight mb-6">
-              Supercharge your <br />
-              AI Agents with <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-600">System Prompts.</span>
-            </h1>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex flex-col items-start lg:items-end text-left lg:text-right"
-          >
-            <p className="text-lg md:text-xl text-zinc-400 mb-10 max-w-md leading-relaxed">
-              Crafting production-grade architectures and killer system prompts to make your AI workforce completely autonomous. 🚀
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-              <button onClick={() => navigate('/vault')} className="px-8 py-4 rounded-xl border border-white/10 text-white font-bold hover:bg-white/5 transition-all w-full sm:w-auto text-center">
-                Explore Vaults
-              </button>
-              <button onClick={onUnlock} className="px-8 py-4 rounded-xl bg-emerald-500 text-black font-bold hover:bg-emerald-400 transition-all flex items-center justify-center gap-2 group w-full sm:w-auto shadow-[0_0_30px_rgba(16,185,129,0.3)]">
-                Unlock Pro Skills
-                <div className="w-6 h-6 rounded-full bg-black/10 flex items-center justify-center group-hover:translate-x-1 transition-transform">
-                  <ArrowRight className="w-4 h-4" />
-                </div>
-              </button>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Bottom Rail */}
-        <div className="mt-24 border-t border-white/5 pt-8">
-          <div className="flex flex-wrap items-center gap-x-8 gap-y-4 text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-600">
-            <span className="text-zinc-400">Our Specialties</span>
-            <span className="text-zinc-800">//</span>
-            <span className="hover:text-emerald-500 transition-colors cursor-default">Design</span>
-            <span className="text-zinc-800">//</span>
-            <span className="hover:text-emerald-500 transition-colors cursor-default">Engineering</span>
-            <span className="text-zinc-800">//</span>
-            <span className="hover:text-emerald-500 transition-colors cursor-default">Data</span>
-            <span className="text-zinc-800">//</span>
-            <span className="hover:text-emerald-500 transition-colors cursor-default">Ops</span>
-            <span className="text-zinc-800">//</span>
-            <span className="hover:text-emerald-500 transition-colors cursor-default">Testing</span>
-          </div>
-        </div>
+      {/* Video Background */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full object-cover scale-[1.3] opacity-40 mix-blend-screen"
+        >
+          <source src="/generated_video.mp4" type="video/mp4" />
+        </video>
+        {/* Dark overlay to ensure text readability */}
+        <div className="absolute inset-0 bg-[#020205] opacity-50" />
+        {/* Gradient overlay to blend edges */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#020205] via-transparent to-[#020205] opacity-80" />
       </div>
+
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 mt-16 flex flex-col items-center flex-grow justify-center">
+
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="flex items-center gap-2 mb-8"
+        >
+          <Terminal className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+          <span className="font-display text-xl sm:text-2xl font-bold tracking-tighter text-white">Prompt Ops</span>
+        </motion.div>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-bold text-white text-center tracking-[-0.03em] mb-8 leading-[1.1] max-w-5xl mx-auto flex flex-col items-center"
+        >
+          <span>Supercharge your</span>
+          <span>AI Agents</span>
+          <span className="flex items-center justify-center gap-3 sm:gap-5 mt-2">
+            <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#676879] font-medium tracking-tight italic">with</span>
+            <span
+              className="text-[#10B981] whitespace-nowrap"
+              style={{ textShadow: "0 0 40px rgba(16,185,129,0.6), 0 0 15px rgba(16,185,129,0.4)" }}
+            >
+              [System Prompts]
+            </span>
+          </span>
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-lg sm:text-xl md:text-[22px] text-[#A0A0AB] text-center mb-12 max-w-3xl mx-auto leading-relaxed font-medium"
+        >
+          Crafting production-grade architectures and killer system prompts to make your AI workforce completely autonomous.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="flex flex-col sm:flex-row items-center gap-4 w-full max-w-[560px] mx-auto mb-6"
+        >
+          <div className="relative w-full">
+            <input
+              type="email"
+              placeholder="Your work e-mail"
+              className="w-full bg-[#1A1A24]/60 border border-white/10 rounded-[14px] px-6 py-4 text-white placeholder:text-[#676879] focus:outline-none focus:ring-2 focus:ring-[#10B981]/60 transition-all font-medium backdrop-blur-md shadow-inner"
+            />
+          </div>
+          <button onClick={onUnlock} className="w-full sm:w-auto px-8 py-4 bg-[#10B981] hover:bg-[#059669] text-black font-semibold rounded-[14px] transition-all shadow-[0_4px_20px_rgba(16,185,129,0.4)] whitespace-nowrap">
+            Unlock Pro
+          </button>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="text-[15px] font-medium text-[#676879] mb-auto"
+        >
+          Start exploring for free or <button onClick={() => navigate('/vault')} className="text-[#A0A0AB] hover:text-white underline underline-offset-4 decoration-[#676879] hover:decoration-white transition-all">explore vaults</button>
+        </motion.div>
+      </div>
+
+      {/* Customer / Specialties Row */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.6 }}
+        className="w-full max-w-5xl mx-auto px-6 mt-16 opacity-50 hover:opacity-100 transition-opacity duration-700 relative z-20"
+      >
+        <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-6 text-[11px] font-bold uppercase tracking-[0.2em] text-[#676879]">
+          <span className="flex items-center gap-2"><Layers className="w-4 h-4 text-[#434453]" /> Design</span>
+          <span className="flex items-center gap-2"><Code2 className="w-4 h-4 text-[#434453]" /> Engineering</span>
+          <span className="flex items-center gap-2"><Database className="w-4 h-4 text-[#434453]" /> Data</span>
+          <span className="flex items-center gap-2"><ServerCog className="w-4 h-4 text-[#434453]" /> Ops</span>
+          <span className="flex items-center gap-2"><FileCheck2 className="w-4 h-4 text-[#434453]" /> Testing</span>
+          <span className="flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-[#434453]" /> Security</span>
+        </div>
+      </motion.div>
     </section>
   );
 };
