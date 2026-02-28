@@ -927,8 +927,9 @@ const Footer = () => (
         </div>
       </div>
     </div>
-    <div className="w-full px-6 md:px-12 lg:px-16 py-0 mt-20 pt-8 border-t border-white/5 text-center text-xs text-zinc-600">
-      &copy; 2026 Prompt Ops. Made with ❤️ by <a href="https://www.uiuxsatyam.com" target="_blank" rel="noopener noreferrer" className="text-emerald-500 hover:text-emerald-400 font-medium transition-colors">Satyam Anand</a>. Built for the autonomous future.
+    <div className="w-full px-6 md:px-12 lg:px-16 py-0 mt-20 pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] sm:text-xs text-zinc-600 text-center sm:text-left">
+      <span>Prompt Ops 2026, made for autonomous future</span>
+      <span>made with ❤️ by <a href="https://www.uiuxsatyam.com" target="_blank" rel="noopener noreferrer" className="text-emerald-500 hover:text-emerald-400 font-medium transition-colors">satyam</a></span>
     </div>
   </footer>
 );
