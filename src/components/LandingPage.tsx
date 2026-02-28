@@ -116,9 +116,9 @@ const Hero = ({ onUnlock }: { onUnlock: () => void }) => {
   const navigate = useNavigate();
 
   return (
-    <section className="relative min-h-screen pt-24 pb-8 flex flex-col justify-center items-center overflow-hidden bg-[#020205]">
+    <section className="relative min-h-screen pt-20 sm:pt-24 pb-12 sm:pb-16 flex flex-col justify-center items-center overflow-hidden bg-[#020205]">
       {/* Background Central Glow */}
-      <div className="absolute top-[40%] left-1/2 -translate-x-1/2 w-[60vw] h-[60vh] bg-[#10B981]/10 blur-[120px] rounded-full pointer-events-none z-0" />
+      <div className="absolute top-[40%] left-1/2 -translate-x-1/2 w-[80vw] sm:w-[60vw] h-[60vh] bg-[#10B981]/10 blur-[120px] rounded-full pointer-events-none z-0" />
 
       {/* Video Background */}
       <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
@@ -127,7 +127,7 @@ const Hero = ({ onUnlock }: { onUnlock: () => void }) => {
           loop
           muted
           playsInline
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full object-cover scale-[1.3] opacity-40 mix-blend-screen"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full object-cover scale-[1.4] sm:scale-[1.3] opacity-40 mix-blend-screen"
         >
           <source src="/generated_video.mp4" type="video/mp4" />
         </video>
@@ -137,7 +137,7 @@ const Hero = ({ onUnlock }: { onUnlock: () => void }) => {
         <div className="absolute inset-0 bg-gradient-to-b from-[#020205] via-transparent to-[#020205] opacity-80" />
       </div>
 
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 mt-16 flex flex-col items-center flex-grow justify-center">
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-5 mt-12 sm:mt-16 flex flex-col items-center flex-grow justify-center">
 
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -153,14 +153,14 @@ const Hero = ({ onUnlock }: { onUnlock: () => void }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-bold text-white text-center tracking-[-0.03em] mb-8 leading-[1.1] max-w-5xl mx-auto flex flex-col items-center"
+          className="text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-bold text-white text-center tracking-[-0.03em] mb-6 sm:mb-8 leading-[1.15] sm:leading-[1.1] max-w-5xl mx-auto flex flex-col items-center"
         >
           <span>Supercharge your</span>
           <span>AI Agents</span>
-          <span className="flex items-center justify-center gap-3 sm:gap-5 mt-2">
-            <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#676879] font-medium tracking-tight italic">with</span>
+          <span className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 sm:gap-5 mt-3 sm:mt-2">
+            <span className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-[#676879] font-medium tracking-tight italic">with</span>
             <span
-              className="text-[#10B981] whitespace-nowrap"
+              className="text-[#10B981] whitespace-nowrap text-3xl sm:text-5xl md:text-6xl lg:text-7xl"
               style={{ textShadow: "0 0 40px rgba(16,185,129,0.6), 0 0 15px rgba(16,185,129,0.4)" }}
             >
               [System Prompts]
@@ -172,7 +172,7 @@ const Hero = ({ onUnlock }: { onUnlock: () => void }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-lg sm:text-xl md:text-[22px] text-[#A0A0AB] text-center mb-12 max-w-3xl mx-auto leading-relaxed font-medium"
+          className="text-base sm:text-xl md:text-[22px] text-[#A0A0AB] text-center mb-10 sm:mb-12 max-w-2xl sm:max-w-3xl mx-auto leading-relaxed font-medium px-4"
         >
           Crafting production-grade architectures and killer system prompts to make your AI workforce completely autonomous.
         </motion.p>
@@ -181,16 +181,16 @@ const Hero = ({ onUnlock }: { onUnlock: () => void }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="flex flex-col sm:flex-row items-center gap-4 w-full max-w-[560px] mx-auto mb-6"
+          className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full max-w-[560px] mx-auto mb-6 px-4"
         >
           <div className="relative w-full">
             <input
               type="email"
               placeholder="Your work e-mail"
-              className="w-full bg-[#1A1A24]/60 border border-white/10 rounded-[14px] px-6 py-4 text-white placeholder:text-[#676879] focus:outline-none focus:ring-2 focus:ring-[#10B981]/60 transition-all font-medium backdrop-blur-md shadow-inner"
+              className="w-full bg-[#1A1A24]/60 border border-white/10 rounded-[14px] px-5 sm:px-6 py-3.5 sm:py-4 text-white placeholder:text-[#676879] focus:outline-none focus:ring-2 focus:ring-[#10B981]/60 transition-all font-medium backdrop-blur-md shadow-inner text-sm sm:text-base"
             />
           </div>
-          <button onClick={onUnlock} className="w-full sm:w-auto px-8 py-4 bg-[#10B981] hover:bg-[#059669] text-black font-semibold rounded-[14px] transition-all shadow-[0_4px_20px_rgba(16,185,129,0.4)] whitespace-nowrap">
+          <button onClick={onUnlock} className="w-full sm:w-auto px-8 py-3.5 sm:py-4 bg-[#10B981] hover:bg-[#059669] text-black font-semibold rounded-[14px] transition-all shadow-[0_4px_20px_rgba(16,185,129,0.4)] whitespace-nowrap text-sm sm:text-base">
             Unlock Pro
           </button>
         </motion.div>
