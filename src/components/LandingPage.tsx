@@ -80,7 +80,7 @@ const PurchaseModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => vo
 
             <div className="mb-8 p-6 rounded-2xl bg-black border border-white/5 space-y-4">
               <div className="flex items-end gap-2 mb-6">
-                <span className="text-4xl font-bold text-white">$249</span>
+                <span className="text-4xl font-bold text-white">$49.99</span>
                 <span className="text-zinc-500 text-sm mb-1 uppercase tracking-wider font-bold">/ once</span>
               </div>
               {[
