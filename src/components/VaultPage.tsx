@@ -128,7 +128,8 @@ export const VaultPage = () => {
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
                 className="p-8 rounded-[2rem] bg-zinc-900/20 border border-white/5 hover:border-emerald-500/30 transition-all group flex flex-col relative overflow-hidden"
               >

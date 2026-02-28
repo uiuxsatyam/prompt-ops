@@ -367,7 +367,15 @@ The checkout flow analysis indicates significant drop-off at the "Shipping Detai
 
           {/* Capabilities */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-8 text-white">Core Capabilities.</h2>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-3xl font-bold mb-8 text-white"
+            >
+              Core Capabilities.
+            </motion.h2>
             <div className="grid md:grid-cols-3 gap-8">
               {[
                 {
@@ -386,20 +394,33 @@ The checkout flow analysis indicates significant drop-off at the "Shipping Detai
                   desc: "Identify points of resistance and detect emotional markers (frustration, delight) in complex journeys."
                 }
               ].map((cap, i) => (
-                <div key={i} className="p-8 rounded-3xl bg-zinc-900/20 border border-white/5 hover:border-emerald-500/30 transition-all group">
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: i * 0.1 }}
+                  className="p-8 rounded-3xl bg-zinc-900/20 border border-white/5 hover:border-emerald-500/30 transition-all group"
+                >
                   <div className="w-12 h-12 rounded-2xl bg-zinc-900 flex items-center justify-center mb-6 border border-white/5 group-hover:bg-emerald-500 group-hover:text-black transition-all">
                     {cap.icon}
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-white">{cap.title}</h3>
                   <p className="text-zinc-500 leading-relaxed text-sm">{cap.desc}</p>
-                </div>
+                </motion.div>
               ))}
             </div>
           </section>
 
           {/* Use Cases */}
           <section className="mb-16">
-            <div className="glass-card p-10 border-white/5">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="glass-card p-10 border-white/5"
+            >
               <h2 className="text-3xl font-bold mb-8 text-white">Production Use Cases.</h2>
               <div className="space-y-12">
                 {[
@@ -414,18 +435,31 @@ The checkout flow analysis indicates significant drop-off at the "Shipping Detai
                     action: "Feed the transcripts to the agent. It will apply Thematic Analysis to extract core insights, user jobs, and emotional pain points."
                   }
                 ].map((use, i) => (
-                  <div key={i} className="grid md:grid-cols-3 gap-8 items-start">
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.2 + i * 0.1 }}
+                    className="grid md:grid-cols-3 gap-8 items-start"
+                  >
                     <div className="text-xl font-bold text-emerald-500">{use.title}</div>
                     <div className="text-sm text-zinc-400 italic">"{use.scenario}"</div>
                     <div className="text-sm text-zinc-300 leading-relaxed">{use.action}</div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           </section>
 
           {/* Architecture Display */}
-          <section className="mb-16">
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mb-16"
+          >
             <div className="flex items-center justify-between mb-8 cursor-default">
               <h2 className="text-3xl font-bold text-white">The Architecture.</h2>
               <div className="flex gap-4">
@@ -455,10 +489,16 @@ The checkout flow analysis indicates significant drop-off at the "Shipping Detai
                 <code>{rawPrompt}</code>
               </pre>
             </div>
-          </section>
+          </motion.section>
 
           {/* Expected Output Display */}
-          <section className="mb-16">
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mb-16"
+          >
             <div className="flex items-center justify-between mb-8 cursor-default">
               <div>
                 <h2 className="text-3xl font-bold text-white mb-2">Expected Output.</h2>
@@ -484,10 +524,16 @@ The checkout flow analysis indicates significant drop-off at the "Shipping Detai
                 <code className="language-markdown">{rawExpectedOutput}</code>
               </pre>
             </div>
-          </section>
+          </motion.section>
 
           {/* Final CTA */}
-          <section className="text-center py-10">
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center py-10"
+          >
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-8">
               Available in Free Tier
             </div>
@@ -506,7 +552,7 @@ The checkout flow analysis indicates significant drop-off at the "Shipping Detai
                 View Full Vault
               </button>
             </div>
-          </section>
+          </motion.section>
         </div>
       </main>
 

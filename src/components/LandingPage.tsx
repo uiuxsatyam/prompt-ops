@@ -228,7 +228,13 @@ const Hero = ({ onUnlock }: { onUnlock: () => void }) => {
 const WhatAreSkills = () => (
   <section id="what-are-skills" className="border-t border-white/5 bg-[#050505]">
     <div className="section-container">
-      <div className="text-center mb-20 px-6">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8 }}
+        className="text-center mb-20 px-6"
+      >
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-6">
           <Layers className="w-3 h-3" />
           The Anatomy of a Skill
@@ -237,7 +243,7 @@ const WhatAreSkills = () => (
         <p className="text-zinc-400 max-w-2xl mx-auto text-lg leading-relaxed mix-blend-plus-lighter">
           It's not just a prompt. It's a deterministic logic protocol delivered as a Markdown (.md) file. Paste it into your AI workspace, and it instantly transforms into a specialized engineer, designer, or researcher.
         </p>
-      </div>
+      </motion.div>
 
       <div className="grid md:grid-cols-3 gap-6 relative">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[400px] bg-emerald-500/5 blur-[100px] rounded-full -z-10 pointer-events-none" />
@@ -258,7 +264,14 @@ const WhatAreSkills = () => (
             desc: "Turn a 2-hour debugging session into a 10-second generation. Equip your entire team with the exact same high-performing logic."
           }
         ].map((feature, i) => (
-          <div key={i} className="p-8 pb-10 rounded-[2rem] bg-zinc-900/30 border border-white/5 hover:border-emerald-500/30 transition-all group relative overflow-hidden flex flex-col items-start backdrop-blur-sm">
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: i * 0.1 }}
+            className="p-8 pb-10 rounded-[2rem] bg-zinc-900/30 border border-white/5 hover:border-emerald-500/30 transition-all group relative overflow-hidden flex flex-col items-start backdrop-blur-sm"
+          >
             <div className="absolute top-0 right-0 p-8 opacity-0 group-hover:opacity-5 transition-opacity duration-500">
               <feature.icon className="w-32 h-32 text-emerald-500" />
             </div>
@@ -267,7 +280,7 @@ const WhatAreSkills = () => (
             </div>
             <h3 className="text-2xl font-bold mb-4 text-white">{feature.title}</h3>
             <p className="text-zinc-500 text-sm leading-relaxed">{feature.desc}</p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
@@ -278,7 +291,12 @@ const Problem = () => (
   <section id="problem" className="border-t border-white/5">
     <div className="section-container">
       <div className="grid md:grid-cols-2 gap-20 items-center">
-        <div>
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+        >
           <h2 className="text-4xl md:text-6xl font-bold mb-8 leading-tight">
             The "Agent Loop" of Death.
           </h2>
@@ -292,24 +310,43 @@ const Problem = () => (
               "Inability to handle multi-step monetization logic.",
               "Context window bloat from inefficient instructions."
             ].map((item, i) => (
-              <div key={i} className="flex items-start gap-4">
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.4 + i * 0.1 }}
+                className="flex items-start gap-4"
+              >
                 <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
                 <p className="text-zinc-300 font-medium">{item}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
         <div className="grid md:grid-cols-2 gap-6">
-          <div className="p-8 rounded-3xl bg-zinc-900/40 border border-white/5 hover:border-red-500/20 transition-all group">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="p-8 rounded-3xl bg-zinc-900/40 border border-white/5 hover:border-red-500/20 transition-all group"
+          >
             <div className="text-red-500 font-display font-bold text-4xl mb-2 group-hover:scale-110 transition-transform origin-left">84%</div>
             <div className="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-4">Failure Rate</div>
             <p className="text-xs text-zinc-400 leading-relaxed">Agents fail complex tasks due to non-structured system instructions.</p>
-          </div>
-          <div className="p-8 rounded-3xl bg-zinc-900/40 border border-white/5 mt-12 hover:border-white/20 transition-all group">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="p-8 rounded-3xl bg-zinc-900/40 border border-white/5 mt-12 hover:border-white/20 transition-all group"
+          >
             <div className="text-white font-display font-bold text-4xl mb-2 group-hover:scale-110 transition-transform origin-left">12h+</div>
             <div className="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-4">Wasted Time</div>
             <p className="text-xs text-zinc-400 leading-relaxed">Average time spent debugging prompts that lack phase-logic.</p>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
@@ -319,12 +356,24 @@ const Problem = () => (
 const BeforeAfter = () => (
   <section id="comparison" className="border-t border-white/5">
     <div className="section-container">
-      <div className="text-center mb-20">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8 }}
+        className="text-center mb-20"
+      >
         <h2 className="text-4xl md:text-6xl font-bold mb-6">Before & After PromptOps.</h2>
         <p className="text-zinc-500 max-w-2xl mx-auto">The difference between a "chat" and a "system architect."</p>
-      </div>
+      </motion.div>
       <div className="grid md:grid-cols-2 gap-8">
-        <div className="p-8 rounded-[2.5rem] bg-zinc-900/30 border border-red-500/10">
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="p-8 rounded-[2.5rem] bg-zinc-900/30 border border-red-500/10"
+        >
           <div className="inline-flex items-center gap-2 text-red-400 text-xs font-bold uppercase tracking-widest mb-6">
             <div className="w-2 h-2 rounded-full bg-red-500" />
             Standard Prompting
@@ -347,8 +396,14 @@ const BeforeAfter = () => (
               ))}
             </ul>
           </div>
-        </div>
-        <div className="p-8 rounded-[2.5rem] bg-emerald-500/5 border border-emerald-500/20">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="p-8 rounded-[2.5rem] bg-emerald-500/5 border border-emerald-500/20"
+        >
           <div className="inline-flex items-center gap-2 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-6">
             <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]" />
             PromptOps .md Skill
@@ -371,7 +426,7 @@ const BeforeAfter = () => (
               ))}
             </ul>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   </section>
@@ -573,10 +628,16 @@ const Platforms = () => {
   return (
     <section id="platforms" className="border-t border-white/5">
       <div className="section-container">
-        <div className="text-center mb-20">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-20"
+        >
           <h2 className="text-4xl md:text-6xl font-bold mb-6">The Specialist Vaults.</h2>
           <p className="text-zinc-500 max-w-2xl mx-auto">9 specialized vaults covering the entire product lifecycle. One-time access to everything.</p>
-        </div>
+        </motion.div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
             {
@@ -628,7 +689,14 @@ const Platforms = () => {
               icon: ShieldCheck
             }
           ].map((platform, i) => (
-            <div key={i} className="p-8 rounded-[2rem] bg-zinc-900/20 border border-white/5 hover:border-emerald-500/30 transition-all group">
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: i * 0.05 }}
+              className="p-8 rounded-[2rem] bg-zinc-900/20 border border-white/5 hover:border-emerald-500/30 transition-all group"
+            >
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-xl bg-zinc-900 flex items-center justify-center border border-white/5 group-hover:bg-emerald-500 group-hover:text-black transition-all">
                   <platform.icon className="w-5 h-5" />
@@ -673,7 +741,7 @@ const Platforms = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -711,10 +779,16 @@ const testimonialsList = [
 const Testimonials = () => (
   <section className="border-t border-white/5 overflow-hidden">
     <div className="section-container !px-0">
-      <div className="text-center mb-20 px-6">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8 }}
+        className="text-center mb-20 px-6"
+      >
         <h2 className="text-4xl md:text-6xl font-bold mb-6">Trusted by the best.</h2>
         <p className="text-zinc-500 max-w-2xl mx-auto">See how PromptOps is transforming workflows for top-tier engineering and design teams.</p>
-      </div>
+      </motion.div>
       <div
         className="relative flex overflow-hidden w-full group"
         style={{ maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)' }}
@@ -746,7 +820,12 @@ const ForDevelopers = () => (
   <section className="border-t border-white/5 bg-emerald-500/5">
     <div className="section-container">
       <div className="grid lg:grid-cols-2 gap-20 items-center">
-        <div>
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+        >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-8">
             <Code2 className="w-3 h-3" />
             For Developers
@@ -759,21 +838,32 @@ const ForDevelopers = () => (
             Integrate PromptOps directly into your development workflow. Install any skill as a structured .md file in your project root and start using it with Cursor, Copilot, or your custom LLM pipelines.
           </p>
           <div className="space-y-4">
-            <div className="flex items-center gap-4 text-zinc-300">
-              <CheckCircle2 className="w-5 h-5 text-emerald-500" />
-              <span>Native .cursorrules support</span>
-            </div>
-            <div className="flex items-center gap-4 text-zinc-300">
-              <CheckCircle2 className="w-5 h-5 text-emerald-500" />
-              <span>Version-controlled architectures</span>
-            </div>
-            <div className="flex items-center gap-4 text-zinc-300">
-              <CheckCircle2 className="w-5 h-5 text-emerald-500" />
-              <span>CI/CD prompt validation</span>
-            </div>
+            {[
+              "Native .cursorrules support",
+              "Version-controlled architectures",
+              "CI/CD prompt validation"
+            ].map((text, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.4 + i * 0.1 }}
+                className="flex items-center gap-4 text-zinc-300"
+              >
+                <CheckCircle2 className="w-5 h-5 text-emerald-500" />
+                <span>{text}</span>
+              </motion.div>
+            ))}
           </div>
-        </div>
-        <div className="relative">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="relative"
+        >
           <div className="p-1 bg-gradient-to-br from-emerald-500/20 to-transparent rounded-2xl">
             <div className="bg-black rounded-xl p-6 font-mono text-sm border border-white/5 shadow-2xl">
               <div className="flex items-center gap-2 mb-6 border-b border-white/5 pb-4">
@@ -798,7 +888,7 @@ const ForDevelopers = () => (
           </div>
           {/* Decorative elements */}
           <div className="absolute -top-10 -right-10 w-40 h-40 bg-emerald-500/10 blur-[60px] rounded-full -z-10" />
-        </div>
+        </motion.div>
       </div>
     </div>
   </section>
@@ -837,10 +927,25 @@ const FAQ = () => {
   return (
     <section id="faq" className="border-t border-white/5">
       <div className="section-container max-w-4xl">
-        <h2 className="text-4xl font-bold mb-12 text-center">Frequently Asked Questions</h2>
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-4xl font-bold mb-12 text-center"
+        >
+          Frequently Asked Questions
+        </motion.h2>
         <div className="grid md:grid-cols-2 gap-4">
           {faqs.map((faq, i) => (
-            <div key={i} className="border border-white/5 rounded-2xl overflow-hidden bg-zinc-900/20">
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.05 }}
+              className="border border-white/5 rounded-2xl overflow-hidden bg-zinc-900/20"
+            >
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
                 className="w-full p-6 text-left flex items-start justify-between hover:bg-white/5 transition-colors"
@@ -853,7 +958,7 @@ const FAQ = () => {
                   {faq.a}
                 </div>
               )}
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -864,27 +969,51 @@ const FAQ = () => {
 const FinalCTA = ({ onUnlock }: { onUnlock: () => void }) => (
   <section className="border-t border-white/5">
     <div className="section-container pb-12">
-      <div className="bg-[#0a0a0a] rounded-[3rem] p-12 md:p-24 text-center relative overflow-hidden shadow-[0_0_80px_rgba(16,185,129,0.05)] border border-emerald-500/10">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1 }}
+        className="bg-[#0a0a0a] rounded-[3rem] p-12 md:p-24 text-center relative overflow-hidden shadow-[0_0_80px_rgba(16,185,129,0.05)] border border-emerald-500/10"
+      >
         <div className="relative z-10 max-w-3xl mx-auto">
-          <h2 className="text-4xl md:text-7xl font-bold mb-8 leading-tight text-white">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-4xl md:text-7xl font-bold mb-8 leading-tight text-white"
+          >
             Own the future of your workflow.
-          </h2>
-          <p className="text-xl text-zinc-400 mb-12 font-medium">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-xl text-zinc-400 mb-12 font-medium"
+          >
             Deploy the infrastructure once and scale your operations forever.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+          >
             <button onClick={onUnlock} className="px-10 py-5 bg-emerald-500 text-black rounded-2xl font-bold hover:bg-emerald-400 transition-all shadow-[0_0_40px_rgba(16,185,129,0.2)]">
               Unlock Pro Skills
             </button>
             <button className="px-10 py-5 bg-zinc-900 text-white border border-white/10 rounded-2xl font-bold hover:bg-zinc-800 transition-all">
               Connect with Creator
             </button>
-          </div>
+          </motion.div>
         </div>
         <div className="absolute top-0 left-0 w-full h-full opacity-15 pointer-events-none">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-emerald-500 via-transparent to-transparent" />
         </div>
-      </div>
+      </motion.div>
     </div>
   </section>
 );
