@@ -511,8 +511,11 @@ The checkout flow analysis indicates significant drop-off at the "Shipping Detai
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-white/5 pt-12 pb-6 text-center text-xs text-zinc-600">
-        &copy; 2026 Prompt Ops. Made with ❤️ by <a href="https://www.uiuxsatyam.com" target="_blank" rel="noopener noreferrer" className="text-emerald-500 hover:text-emerald-400 font-medium transition-colors">Satyam Anand</a>.
+      <footer className="border-t border-white/5 mt-20 pt-12 pb-12 px-6">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-6 text-[10px] font-bold uppercase tracking-[0.15em] text-zinc-600">
+          <span>Prompt Ops 2026, made for autonomous future</span>
+          <span>made with ❤️ by <a href="https://www.uiuxsatyam.com" target="_blank" rel="noopener noreferrer" className="text-emerald-500 hover:text-emerald-400 transition-all hover:scale-105 inline-block">satyam anand</a></span>
+        </div>
       </footer>
     </div>
   );

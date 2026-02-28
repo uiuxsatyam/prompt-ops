@@ -190,9 +190,10 @@ export const VaultPage = () => {
                 <span className="text-sm font-medium">Lifetime Updates</span>
               </div>
             </div>
-            <p className="text-zinc-600 text-xs">
-              &copy; 2026 Prompt Ops Vault. Made with ❤️ by <a href="https://www.uiuxsatyam.com" target="_blank" rel="noopener noreferrer" className="text-emerald-500 hover:text-emerald-400 font-medium transition-colors">Satyam Anand</a>. Built for the autonomous future.
-            </p>
+            <div className="mt-8 pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] font-bold uppercase tracking-[0.15em] text-zinc-600">
+              <span>Prompt Ops 2026, made for autonomous future</span>
+              <span>made with ❤️ by <a href="https://www.uiuxsatyam.com" target="_blank" rel="noopener noreferrer" className="text-emerald-500 hover:text-emerald-400 transition-all hover:scale-105 inline-block">satyam anand</a></span>
+            </div>
           </div>
         </div>
       </main>
