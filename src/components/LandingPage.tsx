@@ -890,46 +890,53 @@ const FinalCTA = ({ onUnlock }: { onUnlock: () => void }) => (
 );
 
 const Footer = () => (
-  <footer className="border-t border-white/5 pt-20 pb-6 bg-black">
-    <div className="w-full px-6 md:px-12 lg:px-16 flex flex-col md:flex-row justify-between items-start gap-12">
-      <div className="max-w-xs">
-        <div className="flex items-center gap-2 mb-6">
+  <footer className="relative border-t border-white/5 pt-24 pb-12 bg-black overflow-hidden">
+    {/* Subtle Glow Effect */}
+    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[50vw] h-[30vh] bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none" />
+
+    <div className="relative z-10 w-full px-6 md:px-12 lg:px-16 flex flex-col md:flex-row justify-between items-start gap-16">
+      <div className="max-w-xs group">
+        <div className="flex items-center gap-2 mb-6 group-hover:scale-[1.02] transition-transform duration-500">
           <Terminal className="w-6 h-6 text-emerald-500" />
           <span className="font-display font-bold text-xl tracking-tighter uppercase text-white">Prompt Ops</span>
         </div>
-        <p className="text-sm text-zinc-500 leading-relaxed">
+        <p className="text-sm text-zinc-500 leading-relaxed font-medium">
           The industry standard for production-grade AI system architectures. Built for the autonomous future.
         </p>
       </div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-16">
+
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-12 sm:gap-20">
         <div>
-          <h4 className="text-white font-bold text-sm mb-6">Product</h4>
-          <ul className="space-y-4 text-sm text-zinc-500">
-            <li><a href="#" className="hover:text-emerald-500 transition-colors">The Vault</a></li>
-            <li><a href="#" className="hover:text-emerald-500 transition-colors">.md Skills</a></li>
-            <li><a href="#" className="hover:text-emerald-500 transition-colors">Updates</a></li>
+          <h4 className="text-white font-bold text-xs uppercase tracking-[0.2em] mb-8 text-zinc-400">Inventory</h4>
+          <ul className="space-y-4 text-[13px] font-medium text-zinc-500">
+            <li><a href="#" className="hover:text-emerald-500 transition-all hover:translate-x-1 inline-block">The Vault</a></li>
+            <li><a href="#" className="hover:text-emerald-500 transition-all hover:translate-x-1 inline-block">.md Skills</a></li>
+            <li><a href="#" className="hover:text-emerald-500 transition-all hover:translate-x-1 inline-block">Logic Protocols</a></li>
           </ul>
         </div>
         <div>
-          <h4 className="text-white font-bold text-sm mb-6">Company</h4>
-          <ul className="space-y-4 text-sm text-zinc-500">
-            <li><a href="#" className="hover:text-emerald-500 transition-colors">About</a></li>
-            <li><a href="#" className="hover:text-emerald-500 transition-colors">Privacy</a></li>
-            <li><a href="#" className="hover:text-emerald-500 transition-colors">Terms</a></li>
+          <h4 className="text-white font-bold text-xs uppercase tracking-[0.2em] mb-8 text-zinc-400">Ecosystem</h4>
+          <ul className="space-y-4 text-[13px] font-medium text-zinc-500">
+            <li><a href="#" className="hover:text-emerald-500 transition-all hover:translate-x-1 inline-block">Changelog</a></li>
+            <li><a href="#" className="hover:text-emerald-500 transition-all hover:translate-x-1 inline-block">Documentation</a></li>
+            <li><a href="#" className="hover:text-emerald-500 transition-all hover:translate-x-1 inline-block">Affiliates</a></li>
           </ul>
         </div>
-        <div className="col-span-2 sm:col-span-1">
-          <h4 className="text-white font-bold text-sm mb-6">Connect</h4>
+        <div className="col-span-2 md:col-span-1">
+          <h4 className="text-white font-bold text-xs uppercase tracking-[0.2em] mb-8 text-zinc-400">Connect</h4>
           <div className="flex gap-4">
-            <a href="#" className="w-10 h-10 rounded-xl bg-zinc-900 border border-white/5 flex items-center justify-center text-zinc-400 hover:text-emerald-500 hover:border-emerald-500/30 transition-all"><Globe className="w-5 h-5" /></a>
-            <a href="#" className="w-10 h-10 rounded-xl bg-zinc-900 border border-white/5 flex items-center justify-center text-zinc-400 hover:text-emerald-500 hover:border-emerald-500/30 transition-all"><Code2 className="w-5 h-5" /></a>
+            <a href="#" className="w-11 h-11 rounded-xl bg-zinc-900/50 border border-white/5 flex items-center justify-center text-zinc-400 hover:text-emerald-500 hover:border-emerald-500/30 transition-all backdrop-blur-sm shadow-lg"><Globe className="w-5 h-5" /></a>
+            <a href="#" className="w-11 h-11 rounded-xl bg-zinc-900/50 border border-white/5 flex items-center justify-center text-zinc-400 hover:text-emerald-500 hover:border-emerald-500/30 transition-all backdrop-blur-sm shadow-lg"><Code2 className="w-5 h-5" /></a>
           </div>
         </div>
       </div>
     </div>
-    <div className="w-full px-6 md:px-12 lg:px-16 py-0 mt-20 pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] sm:text-xs text-zinc-600 text-center sm:text-left">
-      <span>Prompt Ops 2026, made for autonomous future</span>
-      <span>made with ❤️ by <a href="https://www.uiuxsatyam.com" target="_blank" rel="noopener noreferrer" className="text-emerald-500 hover:text-emerald-400 font-medium transition-colors">satyam</a></span>
+
+    <div className="relative z-10 w-full px-6 md:px-12 lg:px-16 py-0 mt-24 pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-6 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.15em] text-zinc-600 text-center sm:text-left">
+      <span className="hover:text-zinc-400 transition-colors cursor-default">Prompt Ops 2026, made for autonomous future</span>
+      <span className="flex items-center gap-1.5">
+        made with ❤️ by <a href="https://www.uiuxsatyam.com" target="_blank" rel="noopener noreferrer" className="text-emerald-500 hover:text-emerald-400 transition-all hover:scale-105 inline-block">satyam anand</a>
+      </span>
     </div>
   </footer>
 );
